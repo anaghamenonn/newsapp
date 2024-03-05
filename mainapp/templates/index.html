@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+
+    <style>
+
+.hero {
+    background-color: #00d1b2;
+    color: #fff;
+} */
+
+
+.section {
+    margin-top: 20px;
+}
+
+.box {
+    margin-bottom: 20px;
+}
+
+.media-content {
+    overflow: hidden;
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #666;
+}
+
+/* Footer */
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Responsive adjustments */
+
+@media screen and (max-width: 768px) {
+    .columns.is-offset-3.is-6 {
+        margin: 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    What's the News?
+                </h1>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="row"> <!-- Change from 'rows' to 'row' -->
+                <div class="column is-offset-3 is-6"> <!-- Adjust columns values as needed -->
+                    {% for title, desc, img in mylist %}
+                    <div class="box">
+                        <article class="media">
+                            <div class="media-content">
+                                <div class="content">
+                                    <p>
+                                        <span class="title">{{ title }}</span>
+                                        <br>
+                                        <img src="{{ img }}" alt="image here"> <!-- Change from {{ i }} to {{ img }} -->
+                                        <span class="subtitle">{{ desc }}</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">Contact Us</footer>
+</body>
+</html>
